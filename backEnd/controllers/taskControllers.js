@@ -1,4 +1,4 @@
-const { createListTask, getAllTasks } = require('../models/taskModesls');
+const { createListTask, getAllTasks, updateTasks } = require('../models/taskModesls');
 
 const createTaskControllers = async (req, res, next) => {
     try {
@@ -23,8 +23,22 @@ const getTaskControllers = async (req, res, next) => {
   }
 };
 
+const updateTasksControllers = async (req, res, next) => {
+  try {
+      const { id } = req.params;
+      const { name, status, creationDate } = req.body;
+       await updateTasks(id, name, status, creationDate);
+      
+      return res.status(200).json({ _id: id, name, status, creationDate });
+  } catch (error) {
+    console.log(`POST UPDATETASKS: ${error.message}`);
+      next(error);
+  }
+};
+
 module.exports = {
   createTaskControllers,
   getTaskControllers,
+  updateTasksControllers,
   
 };
