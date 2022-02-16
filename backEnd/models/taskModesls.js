@@ -23,9 +23,16 @@ const updateTasks = async (id, name, status, creationDate) => {
     .updateOne({ _id: ObjectId(id) }, { $set: { name, status, creationDate } });
 };
 
+const deleteTasks = async (id) => {
+    const connect = await connection();
+    const deletId = await connect.collection('tasks').deleteOne({ _id: ObjectId(id) });
+    return deletId;
+};
+
     module.exports = {
         createListTask,
         getAllTasks,
         updateTasks,
+        deleteTasks,
        
     };

@@ -1,4 +1,4 @@
-const { createListTask, getAllTasks, updateTasks } = require('../models/taskModesls');
+const { createListTask, getAllTasks, updateTasks, deleteTasks } = require('../models/taskModesls');
 
 const createTaskControllers = async (req, res, next) => {
     try {
@@ -36,9 +36,21 @@ const updateTasksControllers = async (req, res, next) => {
   }
 };
 
+const deleteTasksControllers = async (req, res, next) => {
+  try {
+      const { id } = req.params;
+       await deleteTasks(id);
+      return res.status(200).json({ message: 'Tarefa removida com sucesso' });
+  } catch (error) {
+    console.log(`POST DELETETASKS: ${error.message}`);
+      next(error);
+  }
+};
+
 module.exports = {
   createTaskControllers,
   getTaskControllers,
   updateTasksControllers,
+  deleteTasksControllers,
   
 };
