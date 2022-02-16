@@ -1,4 +1,4 @@
-const { createListTask } = require('../models/taskModesls');
+const { createListTask, getAllTasks } = require('../models/taskModesls');
 
 const createTaskControllers = async (req, res, next) => {
     try {
@@ -12,7 +12,19 @@ const createTaskControllers = async (req, res, next) => {
     }
 };
 
+const getTaskControllers = async (req, res, next) => {
+  try {
+    const all = await getAllTasks();
+
+    return res.status(200).json(all);
+  } catch (error) {
+    console.log(`POST GETALLTASKS: ${error.message}`);
+    next(error);
+  }
+};
+
 module.exports = {
   createTaskControllers,
+  getTaskControllers,
   
 };
