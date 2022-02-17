@@ -13,7 +13,7 @@ const getAllTasks = async () => {
     const connect = await connection();
     const all = await connect.collection('tasks').find({}).sort({ creationDate: '1' },
      { status: '1' }).toArray();
-    console.log(all);
+
     return all;
 };
 
@@ -28,11 +28,9 @@ const deleteTasks = async (id) => {
     const deletId = await connect.collection('tasks').deleteOne({ _id: ObjectId(id) });
     return deletId;
 };
-
-    module.exports = {
+module.exports = {
         createListTask,
         getAllTasks,
         updateTasks,
         deleteTasks,
-       
-    };
+};

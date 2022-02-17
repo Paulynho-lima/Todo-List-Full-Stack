@@ -3,9 +3,9 @@ const { createListTask, getAllTasks, updateTasks, deleteTasks } = require('../mo
 const createTaskControllers = async (req, res, next) => {
     try {
       const { name, status, creationDate } = req.body;
-      const newTask = await createListTask(name, status, creationDate);
-      console.log(newTask);
-      return res.status(201).json({ _id: newTask, name, status, creationDate });
+       await createListTask(name, status, creationDate);
+    
+      return res.status(201).json({ message: 'Tarefa criada com sucesso' });
     } catch (error) {
         console.log(`POST CREATETASKS: ${error.message}`);
         next(error);
@@ -52,5 +52,4 @@ module.exports = {
   getTaskControllers,
   updateTasksControllers,
   deleteTasksControllers,
-  
 };

@@ -34,8 +34,7 @@ const nameValidation = (req, res, next) => {
     } 
     next();
    };
-
-   module.exports = {
+    module.exports = {
        nameValidation,
        statusValidation,
        dateValidation,

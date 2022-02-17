@@ -12,6 +12,7 @@ app.use(bodyParse.json());
 
 app.post('/tasks', nameValidation, statusValidation, dateValidation, createTaskControllers);
 app.get('/tasks', getTaskControllers);
+
 app.put('/tasks/:id', nameValidation, statusValidation, dateValidation, updateTasksControllers);
 app.delete('/tasks/:id', deleteTasksControllers);
 

@@ -16,5 +16,4 @@ const connection = async () => (db
       db = conn.db('ListTasks');
       return db;
     }));
-
 module.exports = connection; 
