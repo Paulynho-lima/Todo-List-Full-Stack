@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParse = require('body-parser');
+const cors = require('cors');
 
 const { nameValidation, statusValidation, dateValidation } = require('./middlewares/validations');
 const { createTaskControllers, getTaskControllers,
@@ -9,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParse.json());
+app.use(cors());
 
 app.post('/tasks', nameValidation, statusValidation, dateValidation, createTaskControllers);
 app.get('/tasks', getTaskControllers);

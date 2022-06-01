@@ -15,7 +15,7 @@ const createTaskControllers = async (req, res, next) => {
 const getTaskControllers = async (req, res, next) => {
   try {
     const all = await getAllTasks();
-
+      
     return res.status(200).json(all);
   } catch (error) {
     console.log(`POST GETALLTASKS: ${error.message}`);
@@ -39,6 +39,8 @@ const updateTasksControllers = async (req, res, next) => {
 const deleteTasksControllers = async (req, res, next) => {
   try {
       const { id } = req.params;
+      console.log(id);
+      if (!id) return res.status(404).json({ message: 'name not found' });
        await deleteTasks(id);
       return res.status(200).json({ message: 'Tarefa removida com sucesso' });
   } catch (error) {

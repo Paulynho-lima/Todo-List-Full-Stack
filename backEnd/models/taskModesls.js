@@ -23,9 +23,10 @@ const updateTasks = async (id, name, status, creationDate) => {
     .updateOne({ _id: ObjectId(id) }, { $set: { name, status, creationDate } });
 };
 
-const deleteTasks = async (id) => {
+const deleteTasks = async (name) => {
     const connect = await connection();
-    const deletId = await connect.collection('tasks').deleteOne({ _id: ObjectId(id) });
+    const deletId = await connect.collection('tasks').deleteOne({ name });
+    console.log('eu', deletId);
     return deletId;
 };
 module.exports = {
