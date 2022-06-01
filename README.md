@@ -28,6 +28,7 @@ Copie o ssh do projeto `git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
 - Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
 
   - `git clone git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
+  - `cd Todo-List-Full-Stack`
   - `cd bakend`
   - `npm install`
   - `npm start`
