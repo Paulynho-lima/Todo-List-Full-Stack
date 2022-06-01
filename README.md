@@ -32,7 +32,8 @@ Copie o ssh do projeto `git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
   - `cd bakend`
   - `npm install`
   - `npm start`
-    A aplicação está configurada para rodar na porta local 3001.
+
+  -A aplicação está configurada para rodar na porta local 3001.
 
 ### Saia do diretorio beck-end:
 
@@ -45,6 +46,8 @@ Copie o ssh do projeto `git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
 - `npm install`
 
 - `npm start`
+
+-A aplicação está configurada para rodar na porta local 3000.
 
 ---
 
@@ -64,7 +67,7 @@ A API consta com 1 rotas:
 
 ---
 
-Foi utilizado para o desenvolvimento backend o NodeJS com Express para a criação básica e para o frontend o Reactjs e context api e Mocha/Chai para a criação dos teste unitários.
+Foi utilizado para o desenvolvimento backend o NodeJS com Express e para o frontend foi utilizado Reactjs e context api e Mocha/Chai para a criação dos teste unitários.
 
 ### Banco de dados
 
