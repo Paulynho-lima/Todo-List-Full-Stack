@@ -25,7 +25,7 @@ Pre-requisitos para rodar o projeto:
 
 Copie o ssh do projeto `git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
 
-- Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
+### Abra um terminal no seu computador e utilize os comandos a baixo na ordem que são apresentados:
 
   - `git clone git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
   - `cd Todo-List-Full-Stack`
@@ -33,7 +33,7 @@ Copie o ssh do projeto `git@github.com:Paulynho-lima/Todo-List-Full-Stack.git`
   - `npm install`
   - `npm start`
 
-  -A aplicação está configurada para rodar na porta local 3001.
+ -A aplicação está configurada para rodar na porta local 3001.
 
 ### Saia do diretorio beck-end:
 
